@@ -6,7 +6,6 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
   Picker,
   TextInput,
@@ -14,9 +13,9 @@ import {
 } from 'react-native';
 
 import { MonoText } from '../components/StyledText';
-import { UserIcons } from '../components/UserIcons';
+import UserIcons from '../components/UserIcons';
 
-export default class HelloWorldApp extends React.Component {
+export default class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -54,8 +53,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   title: {
-    flex:1,
-    height:200
+    flex:1
   },
   viewCustomSettings: {
     flex: 1,
