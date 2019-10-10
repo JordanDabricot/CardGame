@@ -9,7 +9,8 @@ import {
   View,
   Picker,
   TextInput,
-  ImageBackground
+  ImageBackground,
+  Button
 } from 'react-native';
 
 import { MonoText } from '../components/StyledText';
@@ -39,11 +40,20 @@ export default class HomeScreen extends React.Component {
         </View>
         <View style={styles.viewListGame}>
         </View>
+        <View style={styles.buttonPlay}>
+        <Button
+          title="Jouer"
+          onPress={() => this.props.navigation.navigate('SettingsStack')}
+        />
+        </View>
       </View>
     );
   }
 }
 
+HomeScreen.navigationOptions = {
+  title: 'Accueil',
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -53,18 +63,30 @@ const styles = StyleSheet.create({
     flex: 1
   },
   title: {
-    flex:1
+    flex:1,
+    height:200
   },
   viewCustomSettings: {
-    flex: 1,
-    flexDirection: "row"
+    flex: 3,
+    flexDirection: "row",
+    marginTop:150
   },
   inputSettings: {
-   width:300,
-   height:50
+   width:200,
+   height:30,
+   borderColor: 'grey',
+   borderWidth: 1,
+   borderRadius:10
+  },
+  buttonPlay: {
+   borderWidth:1,
+   borderColor:'black',
+   borderRadius:10,
+   width:200,
+   marginLeft: 100
   },
   emojiPicker: {
-   height: 50,
+   height: 100,
    width: 150
   },
   viewListGame: {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image, StyleSheet } from 'react-native';
+import { Text, View, Image, StyleSheet} from 'react-native';
 import { CustomPicker } from 'react-native-custom-picker';
 
 class UserIcons extends React.Component {
@@ -60,7 +60,7 @@ class UserIcons extends React.Component {
       <View style={{flex:1}}>
         <Image
           source={this.state.uriCharat}
-          style={{width: 50, height: 50, resizeMode: 'contain'}}
+          style={{width: 30, height: 30, resizeMode: 'contain'}}
         />
       </View>
     )
@@ -74,7 +74,7 @@ class UserIcons extends React.Component {
           <View style={styles.innerContainer}>
             <Image
               source={this.state.uriCharat}
-              style={{width: 50, height: 50, resizeMode: 'contain'}}
+              style={{width: 30, height: 30}}
             />
           </View>
         </View>
@@ -97,7 +97,7 @@ class UserIcons extends React.Component {
           optionTemplate={this.renderOption}
           onValueChange={(item) => {this.selectedItem(item)}}
           value={this.state.uriCharat}
-          style={{width:150, height:50}}
+          style={{width:20, height:20, marginRight:20,borderColor:'#ffff',borderRadius:100}}
         />
       </View>
     );
@@ -106,9 +106,7 @@ class UserIcons extends React.Component {
 
 const styles = StyleSheet.create({
 container: {
-  borderColor: 'grey',
-  borderWidth: 1,
-  padding: 15
+  flex:1
 },
 innerContainer: {
   flexDirection: 'row',
