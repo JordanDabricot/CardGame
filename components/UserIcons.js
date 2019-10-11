@@ -11,31 +11,31 @@ class UserIcons extends React.Component {
 
     this.pic = [
       {
-        item: 'donkey',
+        item: 'Donkey',
         uri: require('../assets/images/user-icons/donkey.png')
       },
       {
-        item: 'luigi',
+        item: 'Luigi',
         uri: require('../assets/images/user-icons/luigi.png')
       },
       {
-        item: 'mario',
+        item: 'Mario',
         uri: require('../assets/images/user-icons/mario.png')
       },
       {
-        item: 'peach',
+        item: 'Peach',
         uri: require('../assets/images/user-icons/peach.png')
       },
       {
-        item: 'toad',
+        item: 'Toad',
         uri: require('../assets/images/user-icons/toad.png')
       },
       {
-        item: 'wario',
+        item: 'Wario',
         uri: require('../assets/images/user-icons/wario.png')
       },
       {
-        item: 'yoshi',
+        item: 'Yoshi',
         uri: require('../assets/images/user-icons/yoshi.png')
       }
     ];
@@ -46,11 +46,15 @@ class UserIcons extends React.Component {
   renderOption = (settings) => {
     const { item, getLabel } = settings
     return (
-      <View style={{flex:1}}>
+      <View style={{flex: 1, flexDirection: 'row'}}>
         <Image
           source={item.uri}
           style={{width: 50, height: 50, resizeMode: 'contain'}}
         />
+        <Text style={{marginTop:20}}>
+        {item.item}
+
+        </Text>
       </View>
     )
   }
@@ -96,6 +100,7 @@ class UserIcons extends React.Component {
           fieldTemplate={this.renderField}
           optionTemplate={this.renderOption}
           onValueChange={(item) => {this.selectedItem(item)}}
+          modalStyle = {{width:100, marginTop:200}}
           value={this.state.uriCharat}
           style={{width:20, height:20, marginRight:20,borderColor:'#ffff',borderRadius:100}}
         />
