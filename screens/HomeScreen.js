@@ -15,6 +15,7 @@ import {
 
 import { MonoText } from '../components/StyledText';
 import UserIcons from '../components/UserIcons';
+import SearchRoom from '../components/SearchRoom';
 
 export default class HomeScreen extends React.Component {
   constructor(props) {
@@ -39,12 +40,13 @@ export default class HomeScreen extends React.Component {
           />
         </View>
         <View style={styles.viewListGame}>
+          <SearchRoom/>
         </View>
         <View style={styles.buttonPlay}>
-        <Button
-          title="Jouer"
-          onPress={() => this.props.navigation.navigate('SettingsStack')}
-        />
+          <Button
+            title="Jouer"
+            onPress={() => this.props.navigation.navigate('SettingsStack')}
+          />
         </View>
       </View>
     );
@@ -67,7 +69,7 @@ const styles = StyleSheet.create({
     height:200
   },
   viewCustomSettings: {
-    flex: 3,
+    flex: 1,
     flexDirection: "row",
     marginTop:150
   },
@@ -90,6 +92,6 @@ const styles = StyleSheet.create({
    width: 150
   },
   viewListGame: {
-    flex: 4
+    flex: 5
   }
 });
