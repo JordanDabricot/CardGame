@@ -61,9 +61,8 @@ class CreateGameModal extends React.Component {
               <Text style={{ color: "red" }}>{this.state.nameError}</Text>
             )}
           </View>
-          <View style={{backgroundColor:'lightgrey'}}>
-          <Text style={{marginLeft:100}}>Nombre de joueur</Text>
           <View style={styles.chooseNbPlayer}>
+            <Text style={{marginRight:100}}>Nombre de joueur</Text>
             <Picker
               selectedValue={this.state.nbPlayer}
               style={{height: 50, width: 100}}
@@ -73,7 +72,6 @@ class CreateGameModal extends React.Component {
               return <Picker.Item key={index} label={item} value={item} />
             })}
           </Picker>
-          </View>
           </View>
           <View style={styles.buttonOption}>
             <Button
