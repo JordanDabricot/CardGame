@@ -55,14 +55,15 @@ class CreateGameModal extends React.Component {
             <TextInput
               placeholder="Entrer le nom de votre room"
               onChangeText={this.handleValueInput}
-              style={{marginTop:150,  borderColor: 'black',borderWidth: 1,borderRadius:10,height:50}}
+              style={{marginTop:150,  borderColor: 'black',borderWidth: 1,borderRadius:10,height:50,width:350}}
             />
             {!!this.state.nameError && (
               <Text style={{ color: "red" }}>{this.state.nameError}</Text>
             )}
           </View>
+          <View style={{backgroundColor:'lightgrey'}}>
+          <Text style={{marginLeft:100}}>Nombre de joueur</Text>
           <View style={styles.chooseNbPlayer}>
-            <Text>Nombre de joueur</Text>
             <Picker
               selectedValue={this.state.nbPlayer}
               style={{height: 50, width: 100}}
@@ -72,6 +73,7 @@ class CreateGameModal extends React.Component {
               return <Picker.Item key={index} label={item} value={item} />
             })}
           </Picker>
+          </View>
           </View>
           <View style={styles.buttonOption}>
             <Button
@@ -107,7 +109,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginTop: 30,
     borderBottomColor: 'grey',
-    borderBottomWidth: 3
+    borderBottomWidth: 3,
   },
   title: {
     flex:1,
@@ -119,7 +121,7 @@ const styles = StyleSheet.create({
   buttonOption: {
     flexDirection: "row",
     justifyContent: 'space-between',
-    marginBottom:30
+    marginBottom:30,
   },
   cancelButton: {
     backgroundColor: "red",
