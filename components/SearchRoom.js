@@ -29,9 +29,7 @@ class SearchRoom extends React.Component {
       this.setState({arrayRoom: resultRoom, search: search})
     }
   };
-
-
-
+  
   render() {
     return (
       <View>

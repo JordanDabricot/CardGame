@@ -9,13 +9,13 @@ import {
   View,
   Picker,
   TextInput,
-  ImageBackground,
-  Button
+  ImageBackground
 } from 'react-native';
 
 import { MonoText } from '../components/StyledText';
 import UserIcons from '../components/UserIcons';
 import SearchRoom from '../components/SearchRoom';
+import CreateGameModal from '../components/CreateGameModal';
 
 export default class HomeScreen extends React.Component {
   constructor(props) {
@@ -26,6 +26,11 @@ export default class HomeScreen extends React.Component {
       messageTab: []
     };
   };
+
+  static navigationOptions = {
+    title: 'Welcome',
+  };
+
   render(){
     return (
       <View style={styles.container}>
@@ -43,10 +48,7 @@ export default class HomeScreen extends React.Component {
           <SearchRoom/>
         </View>
         <View style={styles.buttonPlay}>
-          <Button
-            title="Jouer"
-            onPress={() => this.props.navigation.navigate('SettingsStack')}
-          />
+        <CreateGameModal style={styles.gameModal} navigation={this.props.navigation}/>
         </View>
       </View>
     );
