@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
    borderColor:'black',
    borderRadius:10,
    width:200,
-   marginLeft: 80,
+   marginLeft: 83,
    marginBottom:50
   },
   emojiPicker: {

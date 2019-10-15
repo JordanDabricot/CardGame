@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, StyleSheet, ImageBackground, Text } from 'react-native';
+import {
+   View, 
+   StyleSheet, 
+   ImageBackground, 
+   Text, 
+   StatusBar 
+  } from 'react-native';
 import Draggable from 'react-native-draggable';
 
 export default class LinksScreen extends React.Component {
@@ -16,14 +22,19 @@ export default class LinksScreen extends React.Component {
   render(){
     return (
       <View style={styles.container}>
-        <Draggable
-          reverse={false}
-          renderShape='image'
-          offsetX={0}
-          offsetY={0}
-          imageSource={require('../assets/card/back.png')}
-          renderSize={100}
-        />
+        <ImageBackground source={require('../assets/bg.png')} style={{ flex: 1 }}>
+          <StatusBar hidden={true} />
+          <ImageBackground source={require('../assets/board.png')} style={{ flex: 3, width:375, height:300, marginTop:350 }}>
+            <Draggable
+              reverse={false}
+              renderShape='image'
+              offsetX={150}
+              offsetY={-250}
+              imageSource={require('../assets/back.jpg')}
+              renderSize={130}
+            />
+          </ImageBackground>
+        </ImageBackground>
       </View>
     );
   }
@@ -36,11 +47,6 @@ LinksScreen.navigationOptions = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 15,
-    backgroundColor: '#fff',
-  },
-  title: {
-    flex:1,
-    height:200
-  },
+    paddingTop: 15
+  }
 });
