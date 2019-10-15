@@ -82,7 +82,7 @@ class CreateGameModal extends React.Component {
                 this.checkValueInput();
                 if (this.state.valueInput !== "") {
                   this.closeModal();
-                  navigate('Game', {nbPlayer: this.state.nbPlayer});
+                  navigate('Game', {nbPlayer: this.state.nbPlayer, roomName: this.state.valueInput});
                 }
               }}
             />

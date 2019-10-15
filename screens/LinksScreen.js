@@ -1,18 +1,36 @@
 import React from 'react';
-import { View, StyleSheet, ImageBackground } from 'react-native';
-import { ExpoLinksView } from '@expo/samples';
+import { View, StyleSheet, ImageBackground, Text } from 'react-native';
+import Draggable from 'react-native-draggable';
 
-export default function LinksScreen() {
-  return (
-    <View style={styles.container}>
-    <ImageBackground source={require('../assets/images/background-image/home-header.jpg')} style={styles.title}>
-    </ImageBackground>
-    </View>
-  );
+export default class LinksScreen extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalVisible: false,
+      valueInput: "",
+      nbPlayer: "1",
+      nameError: ""
+    };
+  };
+
+  render(){
+    return (
+      <View style={styles.container}>
+        <Draggable
+          reverse={false}
+          renderShape='image'
+          offsetX={0}
+          offsetY={0}
+          imageSource={require('../assets/card/back.png')}
+          renderSize={100}
+        />
+      </View>
+    );
+  }
 }
 
 LinksScreen.navigationOptions = {
-  title: 'Créer une partie',
+  title: 'Partie',
 };
 
 const styles = StyleSheet.create({
