@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, Modal, Button, TextInput, Picker} from 'react-native';
+import {StyleSheet, Text, View, Modal, Button, TextInput, Picker, ImageBackground} from 'react-native';
 import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements';
 
 class CreateGameModal extends React.Component {
@@ -49,10 +49,13 @@ class CreateGameModal extends React.Component {
           <View style={styles.viewTitleModal}>
             <Text>Créer une partie</Text>
           </View>
+          <ImageBackground source={require('../assets/images/background-image/home-header.jpg')} style={styles.title}>
+          </ImageBackground>
           <View style={styles.viewinputModal}>
             <TextInput
               placeholder="Entrer le nom de votre room"
               onChangeText={this.handleValueInput}
+              style={{marginTop:150,  borderColor: 'black',borderWidth: 1,borderRadius:10,height:50}}
             />
             {!!this.state.nameError && (
               <Text style={{ color: "red" }}>{this.state.nameError}</Text>
@@ -102,22 +105,29 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: "center",
-    marginBottom: 30,
+    marginTop: 30,
     borderBottomColor: 'grey',
     borderBottomWidth: 3
+  },
+  title: {
+    flex:1,
+    height:200,
   },
   viewinputModal: {
     flex:4
   },
   buttonOption: {
     flexDirection: "row",
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    marginBottom:30
   },
   cancelButton: {
-    backgroundColor: "red"
+    backgroundColor: "red",
   },
   chooseNbPlayer: {
-    flex: 1
+    flex: 1,
+    marginBottom:200,
+    marginLeft:100
   }
 })
 

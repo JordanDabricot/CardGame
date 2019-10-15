@@ -35,7 +35,7 @@ export default class HomeScreen extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.viewTitle}>
-          <ImageBackground source={require('../assets/images/background-image/home-header.jpg')} style={styles.title}>
+          <ImageBackground source={require('../assets/mariobg.jpg')} style={styles.title}>
           </ImageBackground>
         </View>
         <View style={styles.viewCustomSettings}>
@@ -68,26 +68,27 @@ const styles = StyleSheet.create({
   },
   title: {
     flex:1,
-    height:200
+    height:200,
   },
   viewCustomSettings: {
     flex: 1,
     flexDirection: "row",
-    marginTop:150
+    marginTop:170,
   },
   inputSettings: {
    width:200,
    height:30,
-   borderColor: 'grey',
+   borderColor: 'black',
    borderWidth: 1,
-   borderRadius:10
+   borderRadius:10,
   },
   buttonPlay: {
    borderWidth:1,
    borderColor:'black',
    borderRadius:10,
    width:200,
-   marginLeft: 100
+   marginLeft: 80,
+   marginBottom:50
   },
   emojiPicker: {
    height: 100,

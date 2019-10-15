@@ -14,7 +14,7 @@ class SearchRoom extends React.Component {
   };
 
   itemOptions =  ({item}) => {
-    return (<Text>{item.label}</Text>)
+    return (<Text style={{borderBottomWidth:10}}>{item.label}</Text>)
   }
 
   updateSearch = search => {
@@ -29,7 +29,7 @@ class SearchRoom extends React.Component {
       this.setState({arrayRoom: resultRoom, search: search})
     }
   };
-  
+
   render() {
     return (
       <View>
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   },
   searchList: {
     flex:5,
-    backgroundColor: "grey"
+    backgroundColor: "lightgrey"
   }
 })
 
